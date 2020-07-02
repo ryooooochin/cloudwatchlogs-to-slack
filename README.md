@@ -1,9 +1,10 @@
 # これは何
 
 cloudwatch logsに特定の文字列が出たらslackに投稿するlambda  
-SAMの設定してデプロイ用のバケット（Makefileに記載）を用意すれば  
+SAMの設定して  
 `code` フォルダ内で `pip install slackweb -t ./` してから  
-`cd ../` → `make all` でデプロイされるはず
+`cd ../` → `make bucket` → `make all` でデプロイされるはず  
+バケット名が他と被って作れない場合はMakefileを修正
 
 # 使い方
 
