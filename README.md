@@ -8,15 +8,19 @@ SAMの設定して
 
 # 使い方
 
+1  
 投稿先slackチャンネルのWebhook URLを取得  
 https://qiita.com/vmmhypervisor/items/18c99624a84df8b31008  
-  
-ロググループ名、Webhookurl、除外文字列をDynamoDBに登録  
-テーブル名：cloudwatchlogs-to-slack-table  
-  
-lambdaのトリガーを設定  
-関数名：cloudwatchlogs-to-slack-function  
 
+2    
+DynamoDBテーブル：cloudwatchlogs-to-slack-tableに以下値を登録  
+id:任意(String)  
+exclud:List（通知除外するStringを設定）  
+loggroup:ロググループ名(String)  
+webhookurl:↑で取得したWebhook URL(String)
+
+3  
+lambdaのトリガーを設定  
 # 注意
 
 ロググループに別のlambdaが設定されてたら使えない
